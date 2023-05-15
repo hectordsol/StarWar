@@ -1,0 +1,34 @@
+const express = require('express');
+const morgan = require('morgan');
+const server = express();
+const {createProxyMiddleware} = require("http-proxy-middleware");
+
+server.use(morgan('dev'));
+server.use('/characters', createProxyMiddleware
+   (
+    {
+	target:"http://localhost:8001",
+	changeOrigin:true
+    }
+   )
+);
+server.use('/films', createProxyMiddleware
+   (
+    {
+	target:"http://localhost:8002",
+	changeOrigin:true
+    }
+   )
+);
+server.use('/planets', createProxyMiddleware
+   (
+    {
+	target:"http://localhost:8003",
+	changeOrigin:true
+    }
+   )
+);
+
+PORT = 8000;
+
+server.listen(PORT, ()=>{console.log(`Gateway in port ${PORT}`)});
