@@ -1,9 +1,9 @@
-const express = require('express');
-const morgan = require('morgan');
+const express = require("express");
+const morgan = require("morgan");
 const server = express();
 const {createProxyMiddleware} = require("http-proxy-middleware");
 
-server.use(morgan('dev'));
+server.use(morgan("dev"));
 server.use('/characters', createProxyMiddleware
    (
     {
@@ -31,4 +31,4 @@ server.use('/planets', createProxyMiddleware
 
 PORT = 8000;
 
-server.listen(PORT, ()=>{console.log(`Gateway in port ${PORT}`)});
+server.listen(PORT, () => {console.log(`Gateway in port ${PORT}`)});
