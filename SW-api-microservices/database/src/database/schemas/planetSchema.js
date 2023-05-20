@@ -13,5 +13,17 @@ const planetSchema = new Schema(
     residents: {type: String, ref: "Planet"},
     films: [{type: String, ref: "Film"}]
   });
-
+  planetSchema.statics.list = async function (){
+    return await this.find()
+      .populate("residents",["_id","name"])
+      .populate("films",["_id","title"])
+  };
+  planetSchema.statics.get = async function (id){
+    return await this.findById(id)  //findOne({_id}) es lo mismo, y sirve para otras propiedades
+      .populate("residents",["_id","name"])
+      .populate("films",["_id","title"])
+  };
+  planetSchema.statics.insert = async function (planet){
+    return await this.create(planet);
+  };
   module.exports = planetSchema;

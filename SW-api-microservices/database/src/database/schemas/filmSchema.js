@@ -6,10 +6,22 @@ const filmSchema = new Schema(
     opening_crawl: String,
     director: String,
     producer: String,
-    release_date: String,
+    release_date: Date,
     characters: [{type: String, ref: "Character"}],
     planets: [{type: String, ref: "Planet"}]
 
   });
-
-  module.exports = filmSchema;
+  filmSchema.statics.list = async function (){
+    return await this.find()
+      .populate("characters",["_id","name"])
+      .populate("planets",["_id","name"])
+  };
+  filmSchema.statics.get = async function (id){
+    return await this.findById(id)  //findOne({_id}) es lo mismo, y sirve para otras propiedades
+      .populate("characters",["_id","name"])
+      .populate("planets",["_id","name"])
+  };
+  filmSchema.statics.insert = async function (film){
+    return await this.create(film);
+  };
+module.exports = filmSchema;
