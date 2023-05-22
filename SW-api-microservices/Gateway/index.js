@@ -28,7 +28,9 @@ server.use('/planets', createProxyMiddleware
     }
    )
 );
-
+server.use('*',(req, res)=>{
+    res.status(404).send('UPS');
+});
 PORT = 8000;
 
 server.listen(PORT, () => {console.log(`Gateway in port ${PORT}`)});
