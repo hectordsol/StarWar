@@ -1,11 +1,11 @@
 const express = require("express");
 const morgan= require("morgan");
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const server = express();
 
 server.use(express.json());
 server.use(morgan("dev"));
-server.use(cookieParser());
+// server.use(cookieParser());
 const {MONGO_URI} = process.env;
 
 server.use((req, res, next)=>{
