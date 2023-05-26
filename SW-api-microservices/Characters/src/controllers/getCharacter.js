@@ -5,6 +5,6 @@ module.exports = async (req, res) => {
     const {id} = req.params;    
     const character = await Character.get(id);
     let statusCode;
-    character?statusCode=201:statusCode=404;
+    character?statusCode=200:statusCode=404;
     response(res, statusCode, character);
 }
