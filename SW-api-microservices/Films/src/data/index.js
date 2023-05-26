@@ -5,7 +5,12 @@ module.exports = {
         const response = await axios.get("http://database:8004/Film");
         return response.data;
     },
-    create:async()=>{
-        throw Error('Hay error en films');
+    create: async(register)=>{
+        const response = await axios.post("http://database:8004/Film",register);
+        return response.data;
+    },
+    get: async(id)=>{
+        const response = await axios.get(`http://database:8004/Film/${id}`);
+        return response.data;
     }
 }

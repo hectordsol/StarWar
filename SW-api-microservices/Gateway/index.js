@@ -29,7 +29,7 @@ server.use('/planets', createProxyMiddleware
    )
 );
 server.use('*',(req, res)=>{
-    res.status(404).send('UPS');
+    res.status(404).send('UPS in Gateway');
 });
 PORT = 8000;
 
