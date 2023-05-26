@@ -5,8 +5,8 @@ module.exports = {
         const response = await axios.get("http://database:8004/Film");
         return response.data;
     },
-    create: async(register)=>{
-        const response = await axios.post("http://database:8004/Film",register);
+    create: async(film)=>{
+        const response = await axios.post("http://database:8004/Film",film);
         return response.data;
     },
     get: async(id)=>{
