@@ -2,7 +2,7 @@ const express = require("express");
 const morgan= require("morgan");
 // const cookieParser = require('cookie-parser');
 const server = express();
-
+require('dotenv').config();
 server.use(express.json());
 server.use(morgan("dev"));
 // server.use(cookieParser());
