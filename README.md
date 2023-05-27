@@ -25,10 +25,12 @@ Todo esto se carga un una VM de google cloud, donde se levantan los servicios co
 ![image](https://github.com/hectordsol/StarWar/assets/95602009/72c444fb-6a74-4823-bbd6-86c04c46f2da)
 
 
-Creditos de Henry 
-
 http://34.125.90.13:8000/characters Consulta de los personajes.
 
 http://34.125.90.13:8000/films Consulta de los films de la saga.
 
 http://34.125.90.13:8000/planets Consulta de los planetas.
+
+Tambien se pueden hacer consultas por id con GET a las mismas rutas, y para crear regitros nuevos con POST. Queda para agregar para actualizar registros y para borrar.
+
+Creditos de Henry.
