@@ -1,3 +1,5 @@
+![image](https://github.com/hectordsol/StarWar/assets/95602009/1e9d180c-537e-4b84-885a-af7f0269961e)
+
 # StarWar
 Este proyecto se trata de una API de Star Wars, que maneja información sobre los personajes de la franquicia (Characters), las películas que se han lanzado (Films) y los planetas que aparecen en dichas películas (Planets).
 
@@ -19,3 +21,5 @@ Se debe crear un microservicio dedicado exclusivamente a la conexión e interacc
 Con ayuda de la aplicación MongoDB Compass se cargan los datos de un JSON, y sin tener que estar generando scripts a mano para el proceso.
 
 Todo esto se carga un una VM de google cloud, donde se levantan los servicios con ayuda de Docker Compose. 
+
+Creditos de Henry 
