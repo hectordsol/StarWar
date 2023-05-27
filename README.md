@@ -28,5 +28,7 @@ Todo esto se carga un una VM de google cloud, donde se levantan los servicios co
 Creditos de Henry 
 
 http://34.125.90.13:8000/characters Consulta de los personajes.
+
 http://34.125.90.13:8000/films Consulta de los films de la saga.
+
 http://34.125.90.13:8000/planets Consulta de los planetas.
