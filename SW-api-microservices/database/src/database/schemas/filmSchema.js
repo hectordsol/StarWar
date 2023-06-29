@@ -24,4 +24,10 @@ const filmSchema = new Schema(
   filmSchema.statics.insert = async function (film){
     return await this.create(film);
   };
+  filmSchema.statics.change = async function (id, film){
+    return await this.findByIdAndUpdate(id, film,{new:true});
+  };
+  filmSchema.statics.remove = async function (id) {
+    return await this.findByIdAndRemove(id);
+  };  
 module.exports = filmSchema;

@@ -26,4 +26,10 @@ const planetSchema = new Schema(
   planetSchema.statics.insert = async function (planet){
     return await this.create(planet);
   };
+  planetSchema.statics.change = async function (id, planet){
+    return await this.findByIdAndUpdate(id, planet,{new:true});
+  };
+  planetSchema.statics.remove = async function (id) {
+    return await this.findByIdAndRemove(id);
+  };
   module.exports = planetSchema;

@@ -26,4 +26,10 @@ const characterSchema = new Schema(
   characterSchema.statics.insert = async function (character){
     return await this.create(character);
   };
+  characterSchema.statics.change = async function (id, character){
+    return await this.findByIdAndUpdate(id, character,{new:true});
+  };
+  characterSchema.statics.remove = async function (id) {
+    return await this.findByIdAndRemove(id);
+  };
   module.exports = characterSchema;
